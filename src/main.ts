@@ -19,6 +19,9 @@ async function handleData(){
 
 function preencherEstatistica(transacoes : Transacao[]) : void {
  const data = new Estatisticas(transacoes);
+ 
+ console.log(data.status)
+
 
  const totalElement = document.querySelector<HTMLElement>("#total span");
  if (totalElement) {
@@ -32,6 +35,8 @@ function preencherEstatistica(transacoes : Transacao[]) : void {
 function preencherTabela(transacoes : Transacao[]) : void {
   const tabela = document.querySelector("#transacoes tbody");
   if (!tabela) return;
+
+
 
   transacoes.forEach((transacao) => {
     tabela.innerHTML += `
